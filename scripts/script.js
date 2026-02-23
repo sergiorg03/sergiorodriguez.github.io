@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('mousemove', (e) => {
         const mouseX = e.clientX / window.innerWidth;
         const mouseY = e.clientY / window.innerHeight;
-        
+
         const blob1 = document.querySelector('.blob-1');
         const blob2 = document.querySelector('.blob-2');
-        
+
         if (blob1) {
             blob1.style.transform = `translate(${mouseX * 30}px, ${mouseY * 30}px)`;
         }
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 5. Función para descargar mi CV en PDF
-    const downloadBtn = document.getElementById('DownloadPDF');
+    /*const downloadBtn = document.getElementById('DownloadPDF');
 
     if (downloadBtn) {
       downloadBtn.addEventListener('click', () => {
@@ -123,6 +123,30 @@ document.addEventListener('DOMContentLoaded', () => {
             a.click();
         });        
       });
+    }*/
+
+    const downloadBtn = document.getElementById('DownloadPDF');
+
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', function () {
+            const pdfUrl = 'CV-Sergio-Rodriguez.pdf'; // Ruta del PDF (en la carpeta base de GitHub)
+            fetch(pdfUrl, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        // Si existe, creamos el enlace y forzamos la descarga
+                        const link = document.createElement("a");
+                        link.href = pdfUrl;
+                        link.download = "CV-Sergio-Rodriguez.pdf";
+                        link.click();
+                    } else {
+                        alert("No es posible descargar el CV actualmente. Por favor, inténtalo más tarde.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error al intentar descargar el PDF:", error);
+                    alert("No es posible descargar el CV actualmente. Por favor, inténtalo más tarde.");
+                });
+        });
     }
 
     // 6. Configuración de mis botones de redes sociales
