@@ -1,0 +1,398 @@
+:root {
+    /* Mis variables de diseño: colores, sombras y radios de borde */
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --secondary: #ec4899;
+    --accent: #f59e0b;
+    --bg-body: #f1f5f9;
+    --bg-card: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border: #e2e8f0;
+    --radius-xl: 1.5rem;
+    --radius-lg: 1rem;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sora', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Burbujas decorativas del fondo */
+.blob {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.blob-1 {
+    top: -10%;
+    right: -10%;
+}
+
+.blob-2 {
+    bottom: 10%;
+    left: -10%;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+}
+
+/* Estilos de mi barra de navegación */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: padding 0.3s ease;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Sección principal de bienvenida */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(180deg, #fff 0%, var(--bg-body) 100%);
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    display: block;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-bottom: 3rem;
+}
+
+/* Ajustes generales para mis secciones */
+section {
+    padding: 8rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-tag {
+    color: var(--primary);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+/* Cuadrícula tipo Bento para mi perfil */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(180px, auto);
+    gap: 1.5rem;
+}
+
+.bento-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.bento-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.wide {
+    grid-column: span 2;
+}
+
+.tall {
+    grid-row: span 2;
+}
+
+/* Iconos y tarjetas informativas */
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--bg-body);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    font-size: 1.8rem;
+}
+
+/* Estilos de mis habilidades (pills) */
+.skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.pill {
+    background: var(--bg-body);
+    padding: 0.6rem 1.2rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.pill:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+/* Mi línea de tiempo académica */
+.timeline {
+    border-left: 2px dashed var(--border);
+    padding-left: 3.5rem;
+    margin-left: 1rem;
+}
+
+.timeline-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+.timeline-card:hover {
+    border-color: var(--primary);
+}
+
+.timeline-card::before {
+    content: '';
+    position: absolute;
+    left: -4.15rem;
+    top: 2.8rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: var(--primary);
+    border-radius: 50%;
+    border: 4px solid var(--bg-body);
+}
+
+/* Estilos de mis botones */
+.btn {
+    padding: 1.25rem 2.5rem;
+    border-radius: 100px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.4);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px -5px rgba(79, 70, 229, 0.5);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--border);
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Pie de página */
+footer {
+    background: #fff;
+    padding: 4rem 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+/* Animaciones de aparición gradual */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos específicos para cuando imprimo o guardo el CV en PDF */
+@media print {
+    #cv-content {
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+
+    nav,
+    .blob,
+    #DownloadPDF {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+    }
+
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .bento-item {
+        break-inside: avoid;
+        box-shadow: none !important;
+    }
+}
+
+/* Ajustes para que se vea bien en móviles y tablets */
+@media (max-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .large,
+    .wide,
+    .tall {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 4rem 1.5rem;
+    }
+}
