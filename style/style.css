@@ -234,7 +234,8 @@ section {
 .timeline {
     border-left: 2px dashed var(--border);
     padding-left: 3.5rem;
-    margin-left: 1rem;
+    max-width: 850px;
+    margin: 0 auto;
 }
 
 .timeline-card {
@@ -254,8 +255,11 @@ section {
 .timeline-card::before {
     content: '';
     position: absolute;
-    left: -4.15rem;
-    top: 2.8rem;
+    /* Centrado horizontal perfecto sobre la línea de 2px */
+    /* left: calc(-3.5rem - 0.6rem - 1px); */
+    left: calc(-4.5rem);
+    /* Centrado vertical con la primera línea de texto (padding 2.5rem + half line-height) */
+    top: 2.75rem;
     width: 1.2rem;
     height: 1.2rem;
     background: var(--primary);
