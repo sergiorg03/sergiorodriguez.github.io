@@ -129,14 +129,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function () {
-            const pdfUrl = 'CV-Sergio-Rodriguez.pdf'; // Ruta del PDF (en la carpeta base de GitHub)
+            const pdfUrl = 'docs/cv_srg.pdf'; // Ruta del PDF (en la carpeta base de GitHub)
             fetch(pdfUrl, { method: 'HEAD' })
                 .then(response => {
                     if (response.ok) {
                         // Si existe, creamos el enlace y forzamos la descarga
                         const link = document.createElement("a");
                         link.href = pdfUrl;
-                        link.download = "CV-Sergio-Rodriguez.pdf";
+                        link.download = "cv_srg.pdf";
                         link.click();
                     } else {
                         alert("No es posible descargar el CV actualmente. Por favor, inténtalo más tarde.");
