@@ -79,54 +79,65 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Función para descargar mi CV en PDF
-    /*const downloadBtn = document.getElementById('DownloadPDF');
-
-    if (downloadBtn) {
-      downloadBtn.addEventListener('click', () => {
-
-        if (typeof html2pdf === 'undefined') {
-          alert('Espera un segundo, la librería para el PDF aún se está cargando...');
-          return;
-        }
-
-        // Selecciono el contenedor principal para el PDF
-        const element = document.getElementById('cv-content');
-
-        // Reseteo el scroll y estilos para que el PDF salga niquelado
-        window.scrollTo(0, 0);
-        document.body.style.height = "auto";
-        document.body.style.overflow = "visible";
-
-        const opt = {
-          margin: 0.2,
-          filename: 'SergioRodriguezCV.pdf',
-          image: { type: 'jpeg', quality: 0.98 },
-          html2canvas: {
-            scale: 2,
-            useCORS: true,
-            scrollY: 0
-          },
-          jsPDF: {
-            unit: 'in',
-            format: 'a4',
-            orientation: 'portrait'
-          }
-        };
-
-        // Lanzo la generación y descarga del PDF
-        html2pdf().set(opt).from(element).outputPdf('blob').then(function (pdf) {
-            const url = URL.createObjectURL(pdf);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'SergioRodriguezCV.pdf';
-            a.click();
-        });        
-      });
-    }*/
-
     const downloadBtn = document.getElementById('DownloadPDF');
     const checkButtonLanguage = document.getElementById('checkButtonLanguage');
+
+    // --- Lógica de Traducción (i18n) ---
+    const translations = {
+        es: null,
+        en: null
+    };
+
+    const loadLanguage = async (lang) => {
+        // Cambiar el atributo lang del HTML
+        document.documentElement.lang = lang;
+
+        // Si ya tenemos las traducciones, las usamos. Si no, las cargamos.
+        if (!translations[lang]) {
+            try {
+                const response = await fetch(`languages/${lang}.json`);
+                translations[lang] = await response.json();
+            } catch (error) {
+                console.error(`Error cargando el idioma ${lang}:`, error);
+                return;
+            }
+        }
+
+        const data = translations[lang];
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (data[key]) {
+                // Si la traducción contiene HTML (como tags <span>), usamos innerHTML
+                if (data[key].includes('<')) {
+                    el.innerHTML = data[key];
+                } else {
+                    el.textContent = data[key];
+                }
+            }
+        });
+
+        // Actualizar el título de la página
+        if (data.page_title) {
+            document.title = data.page_title;
+        }
+
+        // --- Extensión: Cambiar Meta Tags para SEO por idioma ---
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && data.meta_desc) {
+            metaDesc.setAttribute('content', data.meta_desc);
+        }
+
+        const metaKeywords = document.querySelector('meta[name="keywords"]');
+        if (metaKeywords && data.meta_keywords) {
+            metaKeywords.setAttribute('content', data.meta_keywords);
+        }
+
+        // Actualizar Open Graph (opcional pero recomendado para "toda la página")
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogTitle && data.page_title) ogTitle.setAttribute('content', data.page_title);
+        if (ogDesc && data.meta_desc) ogDesc.setAttribute('content', data.meta_desc);
+    };
 
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function () {
@@ -142,12 +153,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         link.download = isEnglish ? "CV_SergioRodriguez_EN.pdf" : "CV_SergioRodriguez_ES.pdf";
                         link.click();
                     } else {
-                        alert("No es posible descargar el CV actualmente. Por favor, inténtalo más tarde.");
+                        alert(isEnglish ? "CV download is currently unavailable. Please try again later." : "No es posible descargar el CV actualmente. Por favor, inténtalo más tarde.");
                     }
                 })
                 .catch(error => {
                     console.error("Error al intentar descargar el PDF:", error);
-                    alert("No es posible descargar el CV actualmente. Por favor, inténtalo más tarde.");
+                    alert(checkButtonLanguage.checked ? "CV download is currently unavailable. Please try again later." : "No es posible descargar el CV actualmente. Por favor, inténtalo más tarde.");
                 });
         });
     }
@@ -156,17 +167,35 @@ document.addEventListener('DOMContentLoaded', () => {
         const updateLangLabels = () => {
             const esLabel = document.querySelector('.lang-label:first-child');
             const enLabel = document.querySelector('.lang-label:last-child');
-            if (checkButtonLanguage.checked) {
-                esLabel.style.color = 'var(--text-secondary)';
-                enLabel.style.color = 'var(--primary)';
+            const isEnglish = checkButtonLanguage.checked;
+            
+            if (isEnglish) {
+                if (esLabel) esLabel.style.color = 'var(--text-secondary)';
+                if (enLabel) enLabel.style.color = 'var(--primary)';
+                loadLanguage('en');
             } else {
-                esLabel.style.color = 'var(--primary)';
-                enLabel.style.color = 'var(--text-secondary)';
+                if (esLabel) esLabel.style.color = 'var(--primary)';
+                if (enLabel) enLabel.style.color = 'var(--text-secondary)';
+                loadLanguage('es');
             }
         };
 
         checkButtonLanguage.addEventListener('change', updateLangLabels);
-        updateLangLabels(); // Initial state
+        
+        // --- Detección automática del idioma del navegador ---
+        // Obtenemos el idioma (ej: 'en-US' -> 'en')
+        const browserLang = navigator.language.slice(0, 2);
+        
+        // Si el idioma detectado es inglés, activamos el checkbox
+        if (browserLang === 'en') {
+            checkButtonLanguage.checked = true;
+        } else {
+            // Por defecto español (checkbox desactivado)
+            checkButtonLanguage.checked = false;
+        }
+        
+        // Forzamos la carga inicial del idioma basado en el estado del checkbox
+        updateLangLabels();
     }
 
     // 6. Configuración de mis botones de redes sociales
