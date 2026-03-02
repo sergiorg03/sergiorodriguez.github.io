@@ -166,5 +166,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ejecuto la config para cada uno de mis perfiles
     setupSocialBtn('btn-linkedin');
     setupSocialBtn('btn-github');
-    setupSocialBtn('btn-gitlab');
+    //setupSocialBtn('btn-gitlab');
 });
