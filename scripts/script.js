@@ -212,6 +212,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // 7. Configuracion de la URL para el botón de proyectos 
+    const button_projects = document.getElementById("button_projects").setAttribute("href", "https://sergiorg03.github.io/projects-showcase/");
+
     // Ejecuto la config para cada uno de mis perfiles
     setupSocialBtn('btn-linkedin');
     setupSocialBtn('btn-github');
