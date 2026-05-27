@@ -2,246 +2,308 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Sergio Rodríguez Geniz" />
-  <meta name="google-site-verification" content="AEsNocO6YBo8uMvE-NHrUVea5iga4q57rKG0EeGZGqE" />
-  <title>Portfolio de Sergio Rodríguez Geniz – Desarrollador de Aplicaciones Multiplataforma y Web</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Portfolio de Sergio Rodríguez, desarrollador de aplicaciones multiplataforma con experiencia en Python, Django, FastAPI, Android y más.">
+    content="Portfolio de Sergio Rodríguez Geniz, desarrollador backend especializado en Python, Django y FastAPI.">
   <meta name="keywords"
-    content="desarrollador, portfolio, Django, Python, Android, SalesForce, APEX, Java, Springboot, SQL, Hibernate, HTML, CSS, JavaScript, FastAPI, Sevilla, desarrollador web">
-  <meta name="robots" content="index, follow">
+    content="desarrollador, portfolio, Django, Python, Android, SalesForce, APEX, Java, Springboot, SQL, FastAPI, Sevilla">
+  <meta name="author" content="Sergio Rodríguez Geniz">
+  <meta name="google-site-verification" content="AEsNocO6YBo8uMvE-NHrUVea5iga4q57rKG0EeGZGqE" />
 
-  <meta property="og:title" content="Sergio Rodríguez Geniz | Desarrollador Backend">
+  <meta property="og:title" content="Sergio Rodríguez Geniz | Backend Developer">
   <meta property="og:description"
-    content="Desarrollador backend especializado en Django y FastAPI. Mira mis proyectos y experiencia.">
+    content="Desarrollador backend especializado en Python, Django y FastAPI. Disponible para nuevas oportunidades.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sergiorg03.github.io/">
 
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-  <link rel="stylesheet" href="style/style.css" />
-  <link rel="icon" href="./img/srg_photo.jpg" type="image/png" />
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <title>Sergio Rodríguez Geniz | Backend Developer</title>
 
-  <!-- Librería de iconos Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <link rel="icon" href="./img/srg_photo.jpg" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
-  <!-- Contenedor principal que se guardará en el PDF -->
-  <div id="cv-content">
 
-    <!-- Burbujas decorativas del fondo -->
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
 
-    <!-- Mi menú de navegación -->
-    <nav>
-      <div class="nav-content">
-        <a href="#home" style="text-decoration: none; color: inherit;">
-          <div style="font-weight: 800; font-size: 1.5rem; letter-spacing: -1px;">SRG.</div>
+  <nav>
+    <div class="nav-logo"><span>//</span> SRG<span>.dev</span></div>
+    <div class="nav-links">
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#timeline">timeline</a>
+      <a href="#contact">contact</a>
+    </div>
+    <div class="nav-status">
+      <div class="status-dot"></div>
+      available_for_hire
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-prompt">iniciando_portfolio.sh — v2025</div>
+    <h1 class="hero-name">
+      <span class="line1 glitch" data-text="Sergio">Sergio</span>
+      <span class="line2">Rodríguez Geniz</span>
+    </h1>
+    <p class="hero-role typewriter">Backend Developer <span class="accent">// Python · Django · FastAPI</span></p>
+    <div class="hero-cta">
+      <a href="#skills" class="btn">./ver_habilidades.sh</a>
+      <a href="https://sergiorg03.github.io/projects-showcase/" rel="noopener noreferrer" class="btn">./ver_proyectos.sh</a>
+      <a href="#contact" class="btn btn-ghost">./contactar.sh</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">años exp.</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">tecnologías</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">B2</div>
+        <div class="stat-label">inglés / C1 →</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section reveal">
+    <div class="section-header">
+      <span class="section-cmd">cat about.md</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Desarrollador graduado en el <strong>IES Velázquez</strong> con especialización en aplicaciones
+          multiplataforma y backend.</p>
+        <p>Creo que la programación es la herramienta perfecta para resolver problemas complejos con <strong>soluciones
+            elegantes y eficientes</strong>. Mi enfoque está en el código limpio, la arquitectura sólida y la entrega de
+          valor real.</p>
+        <p>Actualmente cursando un <strong>Master en Python</strong> e inglés C1 — siempre aprendiendo, siempre
+          creciendo.</p>
+        <p><strong>Sevilla, España</strong> — disponible para trabajo presencial, híbrido o remoto.</p>
+      </div>
+      <div class="about-values">
+        <div class="value-item">
+          <div class="value-icon">▸</div>
+          <div class="value-text"><strong>// Orden &amp; Compromiso</strong>Código limpio, entregas a tiempo, cero
+            medias tintas.</div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">▸</div>
+          <div class="value-text"><strong>// Mejora Continua</strong>Master en Python + C1 de inglés en progreso. El
+            aprendizaje no para.</div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">▸</div>
+          <div class="value-text"><strong>// Trabajo en Equipo</strong>Experiencia real en entorno corporativo con
+            metodologías ágiles.</div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">▸</div>
+          <div class="value-text"><strong>// Orientado al Usuario</strong>Las soluciones técnicas deben servir a
+            personas reales.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section reveal">
+    <div class="section-header">
+      <span class="section-cmd">ls -la skills/</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="skill-bars">
+      <div class="skill-bar">
+        <div class="bar-header"><span class="bar-name">Python / Django / FastAPI</span><span class="bar-pct"
+            id="p1">0%</span></div>
+        <div class="bar-track">
+          <div class="bar-fill" id="b1" data-pct="88"></div>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <div class="bar-header"><span class="bar-name">Java / SpringBoot / Hibernate</span><span class="bar-pct"
+            id="p2">0%</span></div>
+        <div class="bar-track">
+          <div class="bar-fill" id="b2" data-pct="78"></div>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <div class="bar-header"><span class="bar-name">SQL / Bases de Datos</span><span class="bar-pct"
+            id="p3">0%</span></div>
+        <div class="bar-track">
+          <div class="bar-fill" id="b3" data-pct="82"></div>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <div class="bar-header"><span class="bar-name">Android Development</span><span class="bar-pct" id="p4">0%</span>
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill" id="b4" data-pct="70"></div>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <div class="bar-header"><span class="bar-name">HTML5 / CSS3 / JavaScript</span><span class="bar-pct"
+            id="p5">0%</span></div>
+        <div class="bar-track">
+          <div class="bar-fill" id="b5" data-pct="72"></div>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <div class="bar-header"><span class="bar-name">Salesforce / APEX</span><span class="bar-pct" id="p6">0%</span>
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill" id="b6" data-pct="65"></div>
+        </div>
+      </div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-cat">// Backend Core</div>
+        <div class="skill-tags">
+          <span class="tag primary">Python</span>
+          <span class="tag primary">Django</span>
+          <span class="tag primary">FastAPI</span>
+          <span class="tag">Flask</span>
+          <span class="tag">REST APIs</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">// JVM Ecosystem</div>
+        <div class="skill-tags">
+          <span class="tag primary">Java</span>
+          <span class="tag primary">SpringBoot</span>
+          <span class="tag">Hibernate</span>
+          <span class="tag">Maven</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">// Data &amp; Storage</div>
+        <div class="skill-tags">
+          <span class="tag primary">SQL</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">ORM</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">// Mobile &amp; Enterprise</div>
+        <div class="skill-tags">
+          <span class="tag primary">Android</span>
+          <span class="tag primary">Salesforce</span>
+          <span class="tag">APEX</span>
+          <span class="tag">HTML5/CSS3</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline" class="section reveal">
+    <div class="section-header">
+      <span class="section-cmd">git log --all --oneline</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">ACTUALMENTE</div>
+        <div class="tl-title">Master en Python</div>
+        <div class="tl-place">Especialización Backend Avanzado</div>
+        <div class="tl-desc">Profundización en desarrollo de aplicaciones Python, arquitectura de APIs y buenas
+          prácticas.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">ACTUALMENTE</div>
+        <div class="tl-title">Inglés C1</div>
+        <div class="tl-place">Escuela Oficial de Idiomas — Sevilla</div>
+        <div class="tl-desc">Certificación C1 en progreso. Nivel actual B2 demostrado.</div>
+        <span class="tl-badge active">▶ EN CURSO</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2024 — 2025</div>
+        <div class="tl-title">Operario de Línea de Montaje</div>
+        <div class="tl-place">Industria / Producción</div>
+        <div class="tl-desc">Adaptabilidad y trabajo en equipo en entorno de alta exigencia mientras continúo formación
+          técnica.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2023</div>
+        <div class="tl-title">Becario de Software</div>
+        <div class="tl-place">Proyecto Endesa — Salesforce</div>
+        <div class="tl-desc">Análisis y resolución de incidencias funcionales y técnicas en aplicación de producción
+          usando tecnología Salesforce (APEX), en entorno corporativo y trabajo en equipo real.</div>
+        <span class="tl-badge">SALESFORCE · APEX · ENTERPRISE</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2021 — 2023</div>
+        <div class="tl-title">CFGS Desarrollo de Aplicaciones Multiplataforma</div>
+        <div class="tl-place">IES Velázquez — Sevilla</div>
+        <div class="tl-desc">Formación completa en DAM: Java, Python, Android, SQL, SpringBoot, web y más.</div>
+        <span class="tl-badge">TITULACIÓN OFICIAL</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2019 — 2021</div>
+        <div class="tl-title">Bachillerato de Ciencias de la Tecnología</div>
+        <div class="tl-place">IES Triana — Sevilla</div>
+        <div class="tl-desc">Base científico-tecnológica que sustenta el enfoque analítico en el desarrollo de software.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section reveal">
+    <div class="section-header">
+      <span class="section-cmd">./contactar.sh --init</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-box">
+      <div class="contact-prompt">
+        <span class="var">const</span> developer = {<br>
+        &nbsp;&nbsp;nombre: <span class="str">"Sergio Rodríguez Geniz"</span>,<br>
+        &nbsp;&nbsp;rol: <span class="str">"Backend Developer"</span>,<br>
+        &nbsp;&nbsp;estado: <span class="str">"disponible para nuevas oportunidades"</span>,<br>
+        &nbsp;&nbsp;ubicacion: <span class="str">"Sevilla, España"</span><br>
+        };
+      </div>
+      <div class="contact-links">
+        <a href="mailto:sergiorodriguezprofesional@gmail.com" class="contact-link">
+          <span class="link-key">// email</span>
+          <span class="link-val">sergiorodriguezprofesional@gmail.com</span>
         </a>
-        <div class="nav-links">
-          <a href="#about" data-i18n="nav_about">Sobre mí</a>
-          <a href="#skills" data-i18n="nav_skills">Habilidades</a>
-          <a href="#education" data-i18n="nav_education">Formación</a>
-          <a href="#work-experience" data-i18n="nav_work">Experiencia Laboral</a>
-          <a href="#contact" data-i18n="nav_contact">Contacto</a>
-        </div>
-        <div class="language-switch">
-          <span class="lang-label">ES</span>
-          <label class="switch">
-            <input type="checkbox" id="checkButtonLanguage">
-            <span class="slider round"></span>
-          </label>
-          <span class="lang-label">EN</span>
-        </div>
-        <a id="contacto" class="btn btn-primary"
-          style="padding: 0.6rem 1.2rem; font-size: 0.9rem;" data-i18n="nav_cta">Hablemos</a>
+        <a href="https://linkedin.com/in/sergio-rodr%C3%ADguez-geniz-4530902a7" target="_blank"
+          rel="noopener noreferrer" class="contact-link">
+          <span class="link-key">// linkedin</span>
+          <span class="link-val">linkedin.com/in/sergio-rodríguez-geniz-4530902a7</span>
+        </a>
+        <a href="https://github.com/sergiorg03" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <span class="link-key">// github</span>
+          <span class="link-val">github.com/sergiorg03</span>
+        </a>
       </div>
-    </nav>
-
-    <!-- Sección de portada (Bienvenida) -->
-    <section class="hero" id="home">
-      <div class="reveal">
-        <span class="section-tag" data-i18n="hero_tag">Desarrollador de Aplicaciones Multiplataforma</span>
-        <h1 data-i18n="hero_title">Construyendo lo <span>inimaginable.</span></h1>
-        <p data-i18n="hero_desc">Técnico Superior en D.A.M. apasionado por construir soluciones eficientes, elegantes y orientadas al usuario
-          final.</p>
-        <div style="display: flex; gap: 1rem; justify-content: center;">
-          <a href="#about" class="btn btn-primary" data-i18n="hero_btn_me">Conóceme</a>
-          <a id="button_projects" class="btn btn-outline" data-i18n="hero_btn_projects">Proyectos</a>
-        </div>
+      <div class="contact-buttons">
+        <a href="mailto:sergiorodriguezprofesional@gmail.com" class="btn">./enviar_mensaje.sh</a>
+        <a href="docs/cv_srg_es.pdf" download="CV_SergioRodriguez_ES.pdf" class="btn btn-ghost">./descargar_cv.sh</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Sección Sobre mí (Grid tipo Bento) -->
-    <section id="about">
-      <span class="section-tag" data-i18n="about_tag">Mi Perfil</span>
-      <h2 class="section-title" data-i18n="about_title">Un vistazo a mi mundo</h2>
-      <div class="bento-grid">
-        <div class="bento-item large reveal">
-          <div class="card-icon"><i class="fas fa-user"></i></div>
-          <h3 data-i18n="about_who_title">¿Quién soy?</h3>
-          <p style="margin-top: 1rem; color: var(--text-secondary);" data-i18n="about_who_desc">
-            Soy un desarrollador graduado en el IES Velázquez con un enfoque inquebrantable en el compromiso y la
-            eficiencia, con ganas de aprender y crecer profesionalmente.
-            Creo que la programación es la herramienta perfecta para resolver problemas complejos con soluciones
-            sencillas.
-          </p>
-        </div>
-        <div class="bento-item reveal">
-          <div class="card-icon" style="color: var(--secondary);"><i class="fas fa-heart"></i></div>
-          <h3 data-i18n="about_values_title">Mis Valores</h3>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="about_values_desc">Orden, compromiso y mejora continua en cada línea
-            de código escrito.</p>
-        </div>
-        <div class="bento-item reveal">
-          <div class="card-icon" style="color: var(--accent);"><i class="fas fa-bolt"></i></div>
-          <h3 data-i18n="about_goal_title">Mi Meta</h3>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="about_goal_desc">Dar el 100% en el sector informático y convertirme
-            en un referente.</p>
-        </div>
-        <div class="bento-item reveal">
-          <div style="display: flex; align-items: center; gap: 2rem;">
-            <div class="card-icon" style="margin-bottom: 0;"><i class="fas fa-language"></i></div>
-            <div>
-              <h3 data-i18n="about_languages_title">Idiomas</h3>
-              <p style="color: var(--text-secondary);" data-i18n="about_languages_desc">Inglés Nivel Avanzado B2 / Actualmente cursando C1</p>
-            </div>
-          </div>
-        </div>
-        <div class="bento-item reveal">
-          <div style="display: flex; align-items: center; gap: 2rem;">
-            <div class="card-icon" style="margin-bottom: 0;"><i class="fas fa-project-diagram"></i></div>
-            <div>
-              <h3 data-i18n="about_projects_title">Proyectos</h3>
-              <p style="color: var(--text-secondary);" data-i18n="about_projects_desc">Portfolio profesional</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <footer>
+    <div class="footer-sig">SRG<span>.dev</span> — Sergio Rodríguez Geniz</div>
+    <div>© 2025 — Sevilla, España</div>
+  </footer>
 
-    <!-- Sección de mis habilidades técnicas -->
-    <section id="skills" style="background: rgba(255,255,255,0.5);">
-      <span class="section-tag" data-i18n="skills_tag">Mi Arsenal</span>
-      <h2 class="section-title" data-i18n="skills_title">Habilidades Técnicas</h2>
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div class="bento-item reveal">
-          <h3><i class="fas fa-code" style="margin-right: 10px; color: var(--primary);"></i> <span data-i18n="skills_dev_title">Desarrollo</span></h3>
-          <div class="skill-pills" style="margin-top: 1.5rem;">
-            <span class="pill">Java</span>
-            <span class="pill">Python</span>
-            <span class="pill">Django</span>
-            <span class="pill">FastAPI</span>
-            <span class="pill">Flask</span>
-            <span class="pill">SQL</span>
-            <span class="pill">HTML5</span>
-            <span class="pill">CSS3</span>
-            <span class="pill">JavaScript</span>
-            <span class="pill">Android</span>
-            <span class="pill">SpringBoot</span>
-          </div>
-        </div>
-        <div class="bento-item reveal">
-          <h3><i class="fas fa-brain" style="margin-right: 10px; color: var(--primary);"></i> <span data-i18n="skills_soft_title">Soft Skills</span></h3>
-          <div class="skill-pills" style="margin-top: 1.5rem;">
-            <span class="pill" data-i18n="skill_teamwork">Trabajo en equipo</span>
-            <span class="pill" data-i18n="skill_adaptability">Adaptabilidad</span>
-            <span class="pill" data-i18n="skill_resolution">Resolución</span>
-            <span class="pill" data-i18n="skill_punctuality">Puntualidad</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección de mi trayectoria académica -->
-    <section id="education">
-      <span class="section-tag" data-i18n="edu_tag">Trayectoria</span>
-      <h2 class="section-title" data-i18n="edu_title">Formación Académica</h2>
-      <div class="timeline">
-        <div class="timeline-card reveal">
-          <span style="color: var(--primary); font-weight: 700;" data-i18n="current">Actualmente</span>
-          <h3 data-i18n="edu_master_python">Master en Python</h3>
-          <p style="color: var(--text-secondary);" data-i18n="edu_master_python_desc">Curso de especialización de desarrollo de aplicaciones en lenguaje
-            Python</p>
-        </div>
-        <div class="timeline-card reveal">
-          <span style="color: var(--primary); font-weight: 700;" data-i18n="current">Actualmente</span>
-          <h3 data-i18n="edu_c1_english">Inglés Nivel C1</h3>
-          <p style="color: var(--text-secondary);" data-i18n="edu_c1_english_desc">Escuela Oficial de Idiomas (Sevilla)</p>
-        </div>
-        <div class="timeline-card reveal">
-          <span style="color: var(--text-secondary); font-weight: 700;">2021 - 2023</span>
-          <h3 data-i18n="edu_dam">CFGS Desarrollo de Aplicaciones Multiplataforma</h3>
-          <p style="color: var(--text-secondary);" data-i18n="edu_dam_desc">IES Velázquez (Sevilla)</p>
-        </div>
-        <div class="timeline-card reveal">
-          <span style="color: var(--text-secondary); font-weight: 700;">2019 - 2021</span>
-          <h3 data-i18n="edu_bac">Bachillerato de Ciencias de la Tecnología</h3>
-          <p style="color: var(--text-secondary);" data-i18n="edu_bac_desc">IES Triana (Sevilla)</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección de mi trayectoria profesional -->
-    <section id="work-experience">
-      <span class="section-tag" data-i18n="work_tag">Trayectoria</span>
-      <h2 class="section-title" data-i18n="work_title">Experiencia Laboral</h2>
-      <div class="timeline">
-        <div class="timeline-card reveal">
-          <span style="color: var(--text-secondary); font-weight: 700;">2024 | 2025</span>
-          <h3 data-i18n="work_horse">Operario de línea de montaje</h3>
-          <p style="color: var(--text-secondary);" data-i18n="work_horse_desc"></p>
-        </div>
-        <div class="timeline-card reveal">
-          <span style="color: var(--text-secondary); font-weight: 700;">2023</span>
-          <h3 data-i18n="work_accenture">Becario de Software</h3>
-          <p style="color: var(--text-secondary);" data-i18n="work_accenture_desc">Análisis y resolución de incidencias funcionales y técnicas en aplicación de producción en el proyecto para Endesa utilizando tecnología Salesforce (APEX), trabajando en equipo dentro del entorno corporativo.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección de contacto y mis redes sociales -->
-    <section id="contact">
-      <div class="bento-item large reveal"
-        style="text-align: center; width: 100%; max-width: 800px; margin: 0 auto; background: var(--primary); color: white;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;" data-i18n="contact_title">¿Hablamos?</h2>
-        <p style="opacity: 0.9; margin-bottom: 2rem;" data-i18n="contact_desc">Estoy disponible para nuevas oportunidades y colaboraciones.</p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a id="contacto" class="btn"
-            style="background: white; color: var(--primary);"><i class="fas fa-envelope"></i> <span data-i18n="contact_btn">Escríbeme</span></a>
-          <!-- <button id="DownloadPDF" class="btn btn-outline" style="border-color: white; color: white;"><i
-              class="fas fa-download"></i> Descargar CV</button> -->
-          <button id="DownloadPDF" class="btn btn-outline" style="border-color: white; color: white;">
-            <i class="fas fa-download"></i> <span data-i18n="contact_cv">Descargar CV</span>
-          </button>
-        </div>
-        <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 2rem; font-size: 1.5rem;">
-          <i id="btn-linkedin" class="fab fa-linkedin" style="cursor: pointer;"
-            href="www.linkedin.com/in/sergio-rodríguez-geniz-4530902a7"></i>
-          <i id="btn-github" class="fab fa-github" style="cursor: pointer;" href="https://github.com/sergiorg03"></i>
-          <!-- <i id="btn-gitlab" class="fab fa-gitlab" style="cursor: pointer;"
-            href="https://gitlab.com/sergiorodriguezprofesional"></i> -->
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <p style="font-weight: 600;">SERGIO RODRIGUEZ GENIZ</p>
-      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;" data-i18n="footer_country">España</p>
-    </footer>
-
-    <!-- Librerías de Scripts: Generación de PDF y mis funciones personalizadas -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="scripts/script.js"></script>
-  </div>
-  <!-- Comentario creado para evitar el borrado del codespace -->
+  <script src="scripts/script.js"></script>
 </body>
 
 </html>
