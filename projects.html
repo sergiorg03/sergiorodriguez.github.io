@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sergio Rodríguez Geniz" />
+    <title>Sergio Rodríguez Geniz – Proyectos Personales</title>
+    <meta
+      name="description"
+      content="Proyectos personales y de desarrollo de software de Sergio Rodríguez Geniz."
+    />
+    <meta
+      name="keywords"
+      content="desarrollador, portfolio, Django, Python, Android, Salesforce, APEX, Java, Spring Boot, HTML, CSS, JavaScript, FastAPI, Sevilla"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="icon" href="./img/srg_photo.jpg" type="image/png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Menú de navegación -->
+    <nav>
+      <div class="nav-logo"><span>//</span> SRG<span>.dev</span></div>
+      <div class="nav-links">
+        <a href="index.html">home</a>
+        <a href="#proyectos">proyectos</a>
+        <a href="#ideas">contacto</a>
+      </div>
+      <div class="nav-status">
+        <div class="status-dot"></div>
+        available_for_hire
+      </div>
+    </nav>
+
+    <!-- Sección de Proyectos -->
+    <section id="proyectos" class="section reveal" style="margin-top: 52px">
+      <div class="section-header">
+        <span class="section-cmd">./ver_proyectos.sh</span>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="project-grid">
+        <!-- Proyecto 1: Portfolio -->
+        <div class="project-card">
+          <h3>Portfolio Personal</h3>
+          <p>
+            Este proyecto consiste en mi portfolio profesional, una página web
+            que presenta mi formación académica, experiencia laboral y
+            habilidades tanto técnicas como personales. Permite a los visitantes
+            conocer de manera estructurada mi perfil como desarrollador de
+            software, mostrando mis competencias en desarrollo frontend y
+            backend, así como mis capacidades de organización y resolución de
+            problemas.
+          </p>
+          <ul class="features-list">
+            <li>Sección de experiencia laboral</li>
+            <li>Formación académica</li>
+            <li>Habilidades técnicas (Hard Skills)</li>
+            <li>Habilidades personales (Soft Skills)</li>
+            <li>Sección de contacto</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag primary">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="index.html" class="btn"> ./demo.sh </a>
+          </div>
+        </div>
+
+        <!-- Proyecto 2: LegalLens -->
+        <div class="project-card">
+          <h3>LegalLens AI System</h3>
+          <p>
+            LegalLens es una plataforma de análisis de contratos impulsada por
+            IA. Permite subir documentos legales en PDF y obtener un informe
+            automático con puntos clave, posibles cláusulas abusivas (red flags)
+            y una evaluación global de riesgo para agilizar la revisión legal.
+            Su arquitectura combina un backend en Django, un microservicio en
+            FastAPI y un motor híbrido de IA.
+          </p>
+          <ul class="features-list">
+            <li>Sección de Login/Registro</li>
+            <li>Subida y análisis de contratos en PDF</li>
+            <li>Detección de cláusulas de riesgo</li>
+            <li>Panel de Socio Senior con estadísticas</li>
+            <li>Despliegue en Docker con Nginx</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag primary">Python</span>
+            <span class="tag">Django</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">LLM</span>
+            <span class="tag">nginx</span>
+            <span class="tag">Docker</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/sergiorg03/LegalLens.git"
+              class="btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ./codigo.sh
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Ideas / Propuestas -->
+    <section id="ideas" class="section reveal">
+      <div class="section-header">
+        <span class="section-cmd">./proponer_idea.sh</span>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="ideas-container">
+        <div class="contact-box" style="padding: 2.5rem; width: 100%">
+          <div class="form-header">
+            <p>
+              ¿Tienes un proyecto en mente? Cuéntamelo y trabajemos juntos para
+              hacerlo realidad.
+            </p>
+          </div>
+          <form
+            id="ideas-form"
+            class="ideas-form"
+            method="POST"
+            style="margin-top: 1.5rem"
+          >
+            <div class="form-group">
+              <label for="nombre">Nombre y Apellidos</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Tu nombre completo"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Correo Electrónico</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="tu@email.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="idea">Tu Idea de Proyecto</label>
+              <textarea
+                id="idea"
+                name="idea"
+                rows="5"
+                placeholder="Explica detalladamente tu idea..."
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="btn submit-btn"
+              style="margin-top: 1rem"
+            >
+              ./enviar_propuesta.sh
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-sig">
+        SRG<span>.dev</span> — Sergio Rodríguez Geniz
+      </div>
+      <div>© 2025 — Sevilla, España</div>
+    </footer>
+
+    <script src="scripts/projects.js"></script>
+  </body>
+</html>

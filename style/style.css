@@ -126,6 +126,159 @@ footer{border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justi
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
 .reveal.visible{opacity:1;transform:none}
 
+/* --- Estilos para la sección de Proyectos e Ideas (projects.html) --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    border: 1px solid var(--border);
+    padding: 2.2rem;
+    background: var(--bg2);
+    position: relative;
+    overflow: hidden;
+    transition: border-color .3s, transform .3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    border-color: var(--green3);
+    transform: translateY(-3px);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--green);
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--green);
+}
+
+.project-card p {
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.features-list {
+    margin-bottom: 1.5rem;
+    list-style: none;
+}
+
+.features-list li {
+    font-size: 12px;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    opacity: 0.85;
+}
+
+.features-list li::before {
+    content: "→";
+    margin-right: 0.6rem;
+    color: var(--green3);
+    font-weight: bold;
+}
+
+/* Ideas Form */
+.ideas-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.ideas-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: .05em;
+}
+
+.form-group input,
+.form-group textarea {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 0.9rem 1.2rem;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 2px var(--dim);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--muted);
+    opacity: 0.5;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
 @media(max-width:700px){
   .hero-stats{display:none}
   .about-grid{grid-template-columns:1fr}
